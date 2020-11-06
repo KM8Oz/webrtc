@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.1/peerjs.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/getusermedia@2.0.1/getusermedia.bundle.js" ></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <title>dup webrtc prototype</title>
+  <style>
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 360px);
+      grid-auto-rows: 658px;
+    }
+    
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <form>
+    <fieldset>
+      <legend>Choose your favorite camera</legend>
+  
+      <input type="radio" id="front" checked='true' name="front">
+      <label for="front">front</label><br/>
+      <input type="radio" id="back" checked='false' onchange="checking()" name="back">
+      <label for="back">back</label>
+    </fieldset>
+  </form>
+  <div id="video-grid"></div>
+</body>
+<script src="script.js" defer></script>
+</html>
