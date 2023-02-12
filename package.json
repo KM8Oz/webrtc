@@ -43,7 +43,7 @@
   "devDependencies": {
     "expect.js": "*",
     "mocha": "*",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "sinon": "*"
   }
 }
